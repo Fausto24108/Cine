@@ -62,9 +62,11 @@ $res2 = mysqli_query($con,$sql2);
                 $estadoVisual = "libre";
             }
 
-            echo "<div class='butaca " . $estadoVisual . "' data-id='" . $butaca['id_butaca'] . "'>"
-            . $butaca['nro_asiento'] .
-            "</div>";
+        echo "<div class='butaca " . $estadoVisual . "'
+        data-id='" . $butaca['id_butaca'] . "'
+        data-asiento='" . $butaca['nro_asiento'] . "'>"
+        . $butaca['nro_asiento'] .
+        "</div>";
         }
         
         ?>

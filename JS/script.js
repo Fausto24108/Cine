@@ -6,27 +6,28 @@ const total = document.querySelector(".total");
 const boton = document.getElementById("confirmar");
 
 butacas.forEach(butaca =>{
-    butaca.addEventListener("click", () =>{
+
+    butaca.addEventListener("click", () => {
 
         if (butaca.classList.contains("ocupado")) return;
 
-        let id = butaca.dataset.id;
+        let asiento = butaca.dataset.asiento;
 
-        if (butaca.classList.contains("seleccionado")) {
+        if (butaca.classList.contains("seleccionado")){
+
             butaca.classList.remove("seleccionado");
 
-            for (let i = 0; i < seleccionadas.length; i++) {
-                if (seleccionadas[i] == id){
+            for (let i = 0; i < seleccionadas.length; i++){
+                if (seleccionadas[i] == asiento){
                     seleccionadas.splice(i, 1);
                     break;
                 }
             }
 
-        } 
-        
-        else{
+        } else {
+
             butaca.classList.add("seleccionado");
-            seleccionadas.push(id);
+            seleccionadas.push(asiento);
         }
 
         total.innerText = "Total: $" + (seleccionadas.length * precio);
