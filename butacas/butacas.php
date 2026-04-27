@@ -22,10 +22,56 @@ $res2 = mysqli_query($con,$sql2);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cine</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="icon" href="../recursos/LogoCine.jpg" type="image/jpg">
 </head>
 <body>
-    
+    <main>
+        <div class="leyenda">
+            <div class="item">
+                <div class="cuadro libre"></div>
+                <p>Libre</p>
+            </div>
+
+            <div class="item">
+                <div class="cuadro ocupado"></div>
+                <p>Ocupado</p>
+            </div>
+
+            <div class="item">
+                <div class="cuadro seleccionada"></div>
+                <p>Seleccionado</p>
+            </div>
+        </div>
+
+        <div class="pantalla">
+            <p>PANTALLA</p>
+        </div>
+
+        <div id="butacas">
+
+        <?php
+        while ($butaca = mysqli_fetch_assoc($res2)){
+            $estado = $butaca['estado'];
+
+            if ($estado == 1){
+                $estadoVisual = "ocupado";
+            }
+
+            else{
+                $estadoVisual = "libre";
+            }
+
+            echo "
+            <div class='butaca $estadoVisual' data-id='{$butaca['id_butaca']}'>
+            {$butaca['nro_asiento']}
+            </div>
+            ";  
+        }
+        ?>
+        </div>
+        <h2 class="total">Total: $0</h2>  
+    </main>
+<script src="JS/script.js"></script>
 </body>
 </html>

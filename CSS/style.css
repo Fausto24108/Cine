@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+}
+
+.leyenda{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 20px auto;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cuadro {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+.pantalla{
+    border: 2px solid gray;
+    text-align: center;
+    width: 80%;
+    margin: 20px auto;
+    border-radius: 10px;
+    font-size: 13px;
+    letter-spacing: 15px;
+    font-weight: bolder;
+}
+
+main {
+    padding: 20px;
+}
+
+#butacas {
+    display: grid;
+    grid-template-columns: repeat(10, 45px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.butaca {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+    border: 1px solid black;
+}
+
+.butaca p{
+    opacity: 0;
+}
+
+.libre {
+    background-color: rgb(226, 226, 226);
+}
+
+.ocupado {
+    background-color: gray;
+    pointer-events: none;
+    opacity: 0.2;
+}
+
+.seleccionada {
+    background-color: darkblue;
+    transform: scale(1.1);
+}
+
+.total {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 22px;
+    border-top: 2px solid rgb(124, 124, 124);
+    border-bottom: 2px solid rgb(124, 124, 124);
+    text-align: center;
+    padding: 4px;
+}
