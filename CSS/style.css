@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-body {
+body{
     font-family: Arial, sans-serif;
     background-color: white;
 }
@@ -21,7 +21,7 @@ body {
     gap: 8px;
 }
 
-.cuadro {
+.cuadro{
     width: 18px;
     height: 18px;
     border-radius: 3px;
@@ -39,11 +39,11 @@ body {
     font-weight: bolder;
 }
 
-main {
+main{
     padding: 20px;
 }
 
-#butacas {
+#butacas{
     display: grid;
     grid-template-columns: repeat(10, 45px);
     gap: 10px;
@@ -51,7 +51,7 @@ main {
     margin-top: 18px;
 }
 
-.butaca {
+.butaca{
     width: 35px;
     height: 35px;
     display: flex;
@@ -64,31 +64,58 @@ main {
     border: 1px solid black;
 }
 
-.butaca p{
-    opacity: 0;
+.butaca:hover{
+    transform: scale(1.1);
 }
 
-.libre {
+
+
+.libre{
     background-color: rgb(226, 226, 226);
 }
 
-.ocupado {
+.ocupado{
     background-color: gray;
     pointer-events: none;
     opacity: 0.2;
 }
 
-.seleccionada {
+.butaca.seleccionado{
     background-color: darkblue;
     transform: scale(1.1);
 }
 
-.total {
-    width: 100%;
-    margin-top: 20px;
-    font-size: 22px;
+.cuadro.seleccionado{
+    background-color: darkblue;
+}
+
+.compra{
+    width: 80%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-top: 2px solid rgb(124, 124, 124);
     border-bottom: 2px solid rgb(124, 124, 124);
-    text-align: center;
-    padding: 4px;
+    padding: 10px 15px;
+}
+
+.total{
+    font-size: 22px;
+    margin: 0;   
+}
+
+#confirmar{
+    padding: 10px 18px;
+    border: none;
+    background-color: darkblue;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+#confirmar:hover{
+    background-color: navy;
+    transform: scale(1.05);
 }

@@ -39,7 +39,7 @@ $res2 = mysqli_query($con,$sql2);
             </div>
 
             <div class="item">
-                <div class="cuadro seleccionada"></div>
+                <div class="cuadro seleccionado"></div>
                 <p>Seleccionado</p>
             </div>
         </div>
@@ -70,8 +70,11 @@ $res2 = mysqli_query($con,$sql2);
         }
         ?>
         </div>
+        <div class="compra">
         <h2 class="total">Total: $0</h2>  
+        <button id="confirmar">Confirmar</button>
+        </div>
     </main>
-<script src="JS/script.js"></script>
+<script src="../JS/script.js"></script>
 </body>
 </html>
