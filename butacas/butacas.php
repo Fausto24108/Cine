@@ -22,7 +22,7 @@ $res2 = mysqli_query($con,$sql2);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cine</title>
-    <link rel="stylesheet" href="../CSS/style.css?v=1">
+    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="icon" href="../recursos/LogoCine.jpg" type="image/jpg">
 </head>
 <body>
@@ -62,19 +62,23 @@ $res2 = mysqli_query($con,$sql2);
                 $estadoVisual = "libre";
             }
 
-            echo "
-            <div class='butaca $estadoVisual' data-id='{$butaca['id_butaca']}'>
-            {$butaca['nro_asiento']}
-            </div>
-            ";  
+            echo "<div class='butaca " . $estadoVisual . "' data-id='" . $butaca['id_butaca'] . "'>"
+            . $butaca['nro_asiento'] .
+            "</div>";
         }
+        
         ?>
         </div>
         <div class="compra">
         <h2 class="total">Total: $0</h2>  
         <button id="confirmar">Confirmar</button>
         </div>
+        <form id="formCompra" action="../pagos/pagos.php" method="POST">
+            <input type="hidden" name="butacas" id="inputButacas">
+            <input type="hidden" name="id_funcion" value="<?php echo $id_function; ?>">
+            <input type="hidden" name="total" id="inputTotal">
+        </form>
     </main>
-<script src="../JS/script.js?v=1"></script>
+<script src="../JS/script.js"></script>
 </body>
 </html>
