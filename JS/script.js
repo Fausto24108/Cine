@@ -27,5 +27,6 @@ butacas.forEach(butaca => {
         }
 
         total.innerText = "Total: $" + (seleccionadas.length * precio);
+
     });
 });

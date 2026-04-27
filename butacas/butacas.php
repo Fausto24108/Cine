@@ -22,24 +22,24 @@ $res2 = mysqli_query($con,$sql2);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cine</title>
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css?v=1">
     <link rel="icon" href="../recursos/LogoCine.jpg" type="image/jpg">
 </head>
 <body>
     <main>
         <div class="leyenda">
             <div class="item">
-                <div class="cuadro libre"></div>
+                <div class="cuadro_libre"></div>
                 <p>Libre</p>
             </div>
 
             <div class="item">
-                <div class="cuadro ocupado"></div>
+                <div class="cuadro_ocupado"></div>
                 <p>Ocupado</p>
             </div>
 
             <div class="item">
-                <div class="cuadro seleccionado"></div>
+                <div class="cuadro_seleccionado"></div>
                 <p>Seleccionado</p>
             </div>
         </div>
@@ -75,6 +75,6 @@ $res2 = mysqli_query($con,$sql2);
         <button id="confirmar">Confirmar</button>
         </div>
     </main>
-<script src="../JS/script.js"></script>
+<script src="../JS/script.js?v=1"></script>
 </body>
 </html>
