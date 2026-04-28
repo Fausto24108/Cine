@@ -131,3 +131,109 @@ main{
     background-color: navy;
     transform: scale(1.05);
 }
+
+.contenedor-pago{
+    width: 40%;
+    margin: 60px auto;
+    padding: 25px;
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contenedor-pago h1{
+    margin-bottom: 20px;
+}
+
+.resumen{
+    margin: 20px 0;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.form-pago{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.form-pago label{
+    text-align: left;
+    width: 100%;
+}
+
+
+.form-pago input{
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    font-size: 14px;
+    outline: none;
+}
+
+.form-pago input:focus{
+    border-color: darkblue;
+}
+
+#numero-tarjeta{
+    width: 31%;
+    max-width: 320px;
+}
+
+.fecha{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+#mes{
+    width: 60px;
+    text-align: center;
+    display: inline-block;
+}
+
+#anio{
+    width: 60px;
+    text-align: center;
+    display: inline-block;  
+}
+
+#codigo_seguridad{
+    width: 80px;
+    text-align: center;
+}
+
+.metodos-pago{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 10px 0;
+}
+
+.metodos-pago img {
+    width: 70px;
+    height: 45px;
+    object-fit: contain;
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color: white;
+}
+
+.form-pago button{
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: darkblue;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-size: 16px;
+}
+
+.form-pago button:hover{
+    background-color: navy;
+    transform: scale(1.03);
+}
