@@ -51,7 +51,10 @@ $funcion = mysqli_fetch_assoc($res);
                 <label for="codigo_seguridad">CVV</label>
                 <input type="text" name="codigo_seguridad" id="codigo_seguridad" placeholder="XXX" maxlength="3" required>
 
-                
+                <div class="condiciones">
+                    <input type="checkbox" name="condiciones" id="condiciones" required>
+                    <label for="condiciones">Acepto las pautas de la compañia</label>
+                </div>
                 
                 <div class="metodos-pago">
                     <img src="../recursos/mastercard.png" title="Mastercard" alt="Logo Mastercard">

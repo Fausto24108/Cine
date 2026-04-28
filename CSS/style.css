@@ -144,11 +144,11 @@ main{
 }
 
 .contenedor-pago h1{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .resumen{
-    margin: 20px 0;
+    margin: 10px 0;
     font-size: 18px;
     line-height: 1.8;
 }
@@ -204,6 +204,14 @@ main{
 #codigo_seguridad{
     width: 80px;
     text-align: center;
+}
+
+.condiciones{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 14px;
 }
 
 .metodos-pago{
