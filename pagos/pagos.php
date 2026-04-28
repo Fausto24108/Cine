@@ -34,7 +34,7 @@ $funcion = mysqli_fetch_assoc($res);
                 <p>Total: $<?php echo $total; ?></p>
             </div>
 
-            <form action="ticket.php" method="POST" class="form-pago">
+            <form action="../tickets/ticket.php" method="POST" class="form-pago">
                 <input type="text" name="nombre" placeholder="Nombre" required>
                 <input type="text" name="apellido" placeholder="Apellido" required>
                 <input type="email" name="email" placeholder="Email" required>
