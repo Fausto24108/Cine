@@ -18,19 +18,19 @@ foreach($lista_butacas as $b){
     $sql_insert = "INSERT INTO tickets (id_funcion, id_butaca, nombre_cliente, total, correo) VALUES ('$id_funcion', '$b', '$nombre_cliente', '$total', '$email')";
     mysqli_query($con, $sql_insert);
 
-    $sql_update = "UPDATE butacas  SET estado = 1  WHERE id_funcion = '$id_funcion' AND id_butaca = '$b'";
+    $sql_update = "UPDATE butacas  SET estado = 1  WHERE id_butaca = '$b' AND id_butaca = '$b'";
     mysqli_query($con, $sql_update);
 }
 
 $id_confirmacion = mysqli_insert_id($con);
 
-$sql = "SELECT f.horario, p.titulo, s.numero_sala  FROM funciones f INNER JOIN peliculas p ON f.id_pelicula = p.id_pelicula INNER JOIN salas s ON f.id_sala = s.id_sala WHERE f.id_funcion = '$id_funcion'";
+$sql = "SELECT f.horario, p.titulo, s.nombre_sala FROM funciones f INNER JOIN peliculas p ON f.id_pelicula = p.id_pelicula INNER JOIN salas s ON f.id_sala = s.id_sala WHERE f.id_funcion = '$id_funcion'";
 
 $res = mysqli_query($con, $sql);
 $datos = mysqli_fetch_assoc($res);
 
 $pelicula = $datos['titulo'];
-$sala = $datos['numero_sala'];
+$sala = $datos['nombre_sala'];
 $fecha = $datos['horario'];
 ?>
 

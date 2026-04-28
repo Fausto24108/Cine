@@ -77,6 +77,7 @@ $res2 = mysqli_query($con,$sql2);
         </div>
         <form id="formCompra" action="../pagos/pagos.php" method="POST">
             <input type="hidden" name="butacas" id="inputButacas">
+            <input type="hidden" name="asientos" id="inputAsientos">
             <input type="hidden" name="id_funcion" value="<?php echo $id_function; ?>">
             <input type="hidden" name="total" id="inputTotal">
         </form>
