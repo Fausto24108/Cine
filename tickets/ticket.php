@@ -42,7 +42,20 @@ $datos = mysqli_fetch_assoc($res);
 
 $pelicula = $datos['titulo'];
 $sala = $datos['nombre_sala'];
-$fecha = $datos['horario'];
+$horario = $datos['horario'];
+
+require '../correo/enviar.php';
+
+enviarTicket(
+    $email,
+    $nombre_cliente,
+    $pelicula,
+    $sala,
+    $horario,
+    implode(", ", $asientos_texto),
+    $total,
+    $id_confirmacion
+);
 ?>
 
 <!DOCTYPE html>
@@ -67,7 +80,7 @@ $fecha = $datos['horario'];
         <p><strong>Correo:</strong> <?php echo $email; ?></p>
         <p><strong>Película:</strong> <?php echo $pelicula; ?></p>
         <p><strong>Sala:</strong> <?php echo $sala; ?></p>
-        <p><strong>Horario:</strong> <?php echo $fecha; ?></p>
+        <p><strong>Horario:</strong> <?php echo $horario; ?></p>
         <p><strong>Asientos:</strong> <?php echo implode(", ", $asientos_texto); ?></p>
         <p><strong>Total:</strong> $<?php echo $total; ?></p>
         <p><strong>El comprobante sera enviado a tu correo electronico</strong></p>
