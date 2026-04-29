@@ -17,8 +17,8 @@ function enviarTicket($destinatario, $nombreCliente, $pelicula, $sala, $horario,
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
 
-        $mail->Username = 'MAIL_USER';
-        $mail->Password = 'MAIL_PASS'; 
+        $mail->Username = MAIL_USER;
+        $mail->Password = MAIL_PASS; 
 
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
