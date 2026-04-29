@@ -2,6 +2,7 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+require __DIR__ . '/../config.php';
 require __DIR__ . '/src/Exception.php';
 require __DIR__ . '/src/PHPMailer.php';
 require __DIR__ . '/src/SMTP.php';
@@ -16,8 +17,8 @@ function enviarTicket($destinatario, $nombreCliente, $pelicula, $sala, $horario,
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
 
-        $mail->Username = 'cinemagicneuquen@gmail.com';
-        $mail->Password = 'bujv ohbf vvyk aheh'; 
+        $mail->Username = 'MAIL_USER';
+        $mail->Password = 'MAIL_PASS'; 
 
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
