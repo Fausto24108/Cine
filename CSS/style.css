@@ -245,3 +245,36 @@ main{
     background-color: navy;
     transform: scale(1.03);
 }
+
+.contenedor-ticket{
+    width: 40%;
+    margin: 60px auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-color: white;
+}
+
+.ticket-header{
+    background-color: darkblue;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.ticket-header h2{
+    margin-bottom: 10px;
+}
+
+.ticket-body{
+    padding: 20px;
+}
+
+.ticket-body h3{
+    margin-bottom: 15px;
+}
+
+.ticket-body p{
+    margin: 6px 0;
+}
