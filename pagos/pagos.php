@@ -11,6 +11,20 @@ $sql = "SELECT f.*, p.titulo FROM funciones f INNER JOIN peliculas p ON f.id_pel
 
 $res = mysqli_query($con, $sql);
 $funcion = mysqli_fetch_assoc($res);
+
+$lista = explode(",", $butacas);
+$asientos_texto = [];
+
+foreach($lista as $b){
+
+    $sql = "SELECT nro_asiento FROM butacas WHERE id_butaca = $b";
+    $res2 = mysqli_query($con, $sql);
+    $fila = mysqli_fetch_assoc($res2);
+
+    $asientos_texto[] = $fila['nro_asiento'];
+}
+
+$butacas_visibles = implode(", ", $asientos_texto);
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +44,7 @@ $funcion = mysqli_fetch_assoc($res);
 
             <div class="resumen">
                 <p>Película: <?php echo $funcion['titulo']; ?></p>
-                <p>Butacas: <?php echo $butacas; ?></p>
+                <p>Butacas: <?php echo $butacas_visibles; ?></p>
                 <p>Total: $<?php echo $total; ?></p>
             </div>
 
