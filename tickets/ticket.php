@@ -13,7 +13,7 @@ $nombre_cliente = $nombre . " " . $apellido;
 
 $lista_butacas = explode(",", $butacas);
 
-$id_confirmacion = 0;
+$codigo = 0;
 $asientos_texto = [];
 
 foreach($lista_butacas as $b){
@@ -21,8 +21,8 @@ foreach($lista_butacas as $b){
     $sql_insert = "INSERT INTO tickets (id_funcion, id_butaca, nombre_cliente, total, correo) VALUES ('$id_funcion', '$b', '$nombre_cliente', '$total', '$email')";
     mysqli_query($con, $sql_insert);
 
-    if ($id_confirmacion == 0) {
-        $id_confirmacion = mysqli_insert_id($con);
+    if ($codigo == 0) {
+        $codigo = mysqli_insert_id($con);
     }
 
     $sql_update = "UPDATE butacas SET estado = 1 WHERE id_butaca = '$b'";
@@ -54,7 +54,7 @@ enviarTicket(
     $horario,
     implode(", ", $asientos_texto),
     $total,
-    $id_confirmacion
+    $codigo
 );
 ?>
 
@@ -71,11 +71,11 @@ enviarTicket(
 <div class="contenedor-ticket">
     <div class="ticket-header">
         <h2>Cine Magic</h2>
-        <p>Estimado cliente, gracias por usar el servicio de tickets de Cine Magic. Los datos de tu compra están indicados a continuación. Que disfrutes de tu función.</p>
+        <p>Gracias por tu compra</p>
     </div>
     <div class="ticket-body">
         <h3>Datos de tu orden</h3>
-        <p><strong>Numero de confirmacion:</strong> #<?php echo $id_confirmacion; ?></p>
+        <p><strong>Codigo:</strong> #<?php echo $codigo; ?></p>
         <p><strong>Cliente:</strong> <?php echo $nombre_cliente; ?></p>
         <p><strong>Correo:</strong> <?php echo $email; ?></p>
         <p><strong>Película:</strong> <?php echo $pelicula; ?></p>
