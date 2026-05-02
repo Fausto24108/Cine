@@ -4,17 +4,16 @@ $con = conectar();
 
 $id_funcion = $_POST['id_funcion'];
 $butacas = $_POST['butacas'];
+$asientos = $_POST['asientos'];
 $total = $_POST['total'];
 $nombre = $_POST['nombre'];
 $apellido = $_POST['apellido'];
 $email = $_POST['email'];
 
 $nombre_cliente = $nombre . " " . $apellido;
-
 $lista_butacas = explode(",", $butacas);
 
 $codigo = 0;
-$asientos_texto = [];
 
 foreach($lista_butacas as $b){
 
@@ -27,15 +26,9 @@ foreach($lista_butacas as $b){
 
     $sql_update = "UPDATE butacas SET estado = 1 WHERE id_butaca = '$b'";
     mysqli_query($con, $sql_update);
-
-    $sql_asiento = "SELECT nro_asiento FROM butacas WHERE id_butaca = '$b'";
-    $res_asiento = mysqli_query($con, $sql_asiento);
-    $fila = mysqli_fetch_assoc($res_asiento);
-
-    $asientos_texto[] = $fila['nro_asiento'];
 }
 
-$sql = "SELECT f.horario, p.titulo, s.nombre_sala FROM funciones f INNER JOIN peliculas p ON f.id_pelicula = p.id_pelicula INNER JOIN salas s ON f.id_sala = s.id_sala WHERE f.id_funcion = '$id_funcion'";
+$sql = "SELECT funciones.horario, peliculas.titulo, salas.nombre_sala FROM funciones INNER JOIN peliculas ON funciones.id_pelicula = peliculas.id_pelicula INNER JOIN salas ON funciones.id_sala = salas.id_sala WHERE funciones.id_funcion = '$id_funcion'";
 
 $res = mysqli_query($con, $sql);
 $datos = mysqli_fetch_assoc($res);
@@ -52,7 +45,7 @@ enviarTicket(
     $pelicula,
     $sala,
     $horario,
-    implode(", ", $asientos_texto),
+    $asientos,
     $total,
     $codigo
 );
@@ -81,10 +74,10 @@ enviarTicket(
         <p><strong>Película:</strong> <?php echo $pelicula; ?></p>
         <p><strong>Sala:</strong> <?php echo $sala; ?></p>
         <p><strong>Horario:</strong> <?php echo $horario; ?></p>
-        <p><strong>Asientos:</strong> <?php echo implode(", ", $asientos_texto); ?></p>
+        <p><strong>Asientos:</strong> <?php echo $asientos; ?></p>
         <p><strong>Total:</strong> $<?php echo $total; ?></p>
         <p><strong>El comprobante sera enviado a tu correo electronico</strong></p>
     </div>
 </div>
-
 </body>
+</html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-04-2026 a las 02:35:21
+-- Tiempo de generación: 02-05-2026 a las 03:00:11
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -517,7 +517,8 @@ CREATE TABLE `tickets` (
   `id_ticket` int(11) NOT NULL,
   `id_butaca` int(11) NOT NULL,
   `id_funcion` int(11) NOT NULL,
-  `nombre_cliente` varchar(100) NOT NULL,
+  `nombre_cliente` varchar(50) NOT NULL,
+  `correo` varchar(100) NOT NULL,
   `total` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -525,10 +526,10 @@ CREATE TABLE `tickets` (
 -- Volcado de datos para la tabla `tickets`
 --
 
-INSERT INTO `tickets` (`id_ticket`, `id_butaca`, `id_funcion`, `nombre_cliente`, `total`) VALUES
-(1, 150, 1, 'Fausto Poggi', 15000.00),
-(2, 70, 2, 'Juan Manuel', 15000.00),
-(3, 380, 3, 'Miguel Alejandro', 40000.00);
+INSERT INTO `tickets` (`id_ticket`, `id_butaca`, `id_funcion`, `nombre_cliente`, `correo`, `total`) VALUES
+(1, 150, 1, 'Pedro Perez', 'pedroperez@hotmail.com', 15000.00),
+(2, 70, 2, 'Juan Manuel', 'juanmanuelprogamer@gmail.com', 15000.00),
+(3, 380, 3, 'Miguel Alejandro', 'miguelitoalejandrito@gmail.com', 40000.00);
 
 --
 -- Índices para tablas volcadas

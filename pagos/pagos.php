@@ -5,26 +5,13 @@ $con = conectar();
 
 $id_funcion = $_POST['id_funcion'];
 $butacas = $_POST['butacas'];
+$asientos = $_POST['asientos'];
 $total = $_POST['total'];
 
-$sql = "SELECT f.*, p.titulo FROM funciones f INNER JOIN peliculas p ON f.id_pelicula = p.id_pelicula WHERE f.id_funcion = $id_funcion";
+$sql = "SELECT funciones.*, peliculas.titulo FROM funciones INNER JOIN peliculas ON funciones.id_pelicula = peliculas.id_pelicula WHERE funciones.id_funcion = $id_funcion";
 
 $res = mysqli_query($con, $sql);
 $funcion = mysqli_fetch_assoc($res);
-
-$lista = explode(",", $butacas);
-$asientos_texto = [];
-
-foreach($lista as $b){
-
-    $sql = "SELECT nro_asiento FROM butacas WHERE id_butaca = $b";
-    $res2 = mysqli_query($con, $sql);
-    $fila = mysqli_fetch_assoc($res2);
-
-    $asientos_texto[] = $fila['nro_asiento'];
-}
-
-$butacas_visibles = implode(", ", $asientos_texto);
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +31,7 @@ $butacas_visibles = implode(", ", $asientos_texto);
 
             <div class="resumen">
                 <p>Película: <?php echo $funcion['titulo']; ?></p>
-                <p>Butacas: <?php echo $butacas_visibles; ?></p>
+                <p>Butacas: <?php echo $asientos; ?></p>
                 <p>Total: $<?php echo $total; ?></p>
             </div>
 
@@ -76,6 +63,7 @@ $butacas_visibles = implode(", ", $asientos_texto);
                 </div>
 
                 <input type="hidden" name="butacas" value="<?php echo $butacas; ?>">
+                <input type="hidden" name="asientos" value="<?php echo $asientos; ?>">
                 <input type="hidden" name="total" value="<?php echo $total; ?>">
                 <input type="hidden" name="id_funcion" value="<?php echo $id_funcion; ?>">
 
