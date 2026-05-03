@@ -1,6 +1,8 @@
 let seleccionadas = [];
 let seleccionadasIds = [];
-let precio = 15000;
+
+const compra = document.querySelector(".compra");
+let precio = compra.dataset.precio;
 
 const butacas = document.querySelectorAll(".butaca");
 const total = document.querySelector(".total");

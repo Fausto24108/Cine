@@ -69,7 +69,7 @@ $res2 = mysqli_query($con,$sql2);
         
         ?>
         </div>
-        <div class="compra">
+        <div class="compra" data-precio="<?php echo $precio; ?>">
         <h2 class="total">Total: $0</h2>  
         <button id="confirmar">Confirmar</button>
         </div>
