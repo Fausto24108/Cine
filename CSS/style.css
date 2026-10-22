@@ -277,6 +277,7 @@ main{
 
 .ticket-body p{
     margin: 6px 0;
+<<<<<<< HEAD
 }
 
 .cartelera {
@@ -384,4 +385,6 @@ main{
 /* Estilo especial opcional para destacar el botón de salida */
 .nav-box-logout:hover {
   color: #d9534f;
+=======
+>>>>>>> 98a9da982b75173ffd072aaef36f5b1b007063f0
 }
