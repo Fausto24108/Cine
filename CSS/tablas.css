@@ -1,0 +1,83 @@
+/* Fuente global y colores principales */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1a59a8;
+}
+
+/* Título de la sección */
+h2 {
+    color: #0d47a1;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+/* Botón Crear */
+.btn-crear {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #0d47a1;
+    border: 2px solid #33b5e5;
+    border-radius: 12px;
+    padding: 6px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-crear:hover {
+    background-color: #e0f7fa;
+}
+
+/* Estilos de la Tabla */
+table.tabla-admin {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid #33b5e5; /* Borde exterior celeste claro */
+}
+
+table.tabla-admin th, 
+table.tabla-admin td {
+    border: 1px solid #33b5e5; /* Bordes internos celestes */
+    padding: 8px 12px;
+    text-align: center;
+    color: #0d47a1;
+    font-size: 14px;
+}
+
+table.tabla-admin th {
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+/* Celdas de acciones con fondo de color */
+td.celda-eliminar {
+    background-color: #ff5252; /* Fondo rojo */
+}
+
+td.celda-eliminar a {
+    color: #0d47a1 !important;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+td.celda-modificar {
+    background-color: #ffe054; /* Fondo amarillo */
+}
+
+td.celda-modificar a {
+    color: #0d47a1 !important;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Enlace Volver */
+.btn-volver {
+    display: inline-block;
+    margin-top: 20px;
+    color: #0d47a1;
+    text-decoration: none;
+    font-weight: bold;
+}

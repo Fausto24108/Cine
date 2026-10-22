@@ -1,0 +1,15 @@
+<h2>NUEVO TICKET </h2>
+<form action="agregar_tickets.php" method="post">
+    <label for="id_butaca">ID de la Butaca:</label>
+<input type="string" name="id_butaca" required/><br/><br/>
+	<label for="id_funcion">ID de la Funcion</label>
+	<input type="string" name="id_funcion" required/><br/><br/>
+    <label for="nombre_cliente">Nombre del Cliente:</label>
+<input type="string" name="nombre_cliente" required/><br/><br/>
+    <label for="correo">Correo:</label>
+<input type="email" name="correo" required/><br/><br/>
+    <label for="total">Total:</label>
+<input type="number" name="total" required/><br/><br/>
+	<input type="submit" name="agregar" value="AGREGAR FUNCION"/>
+	<input type="submit" name="cancelar" value="cancelar" formaction="../sistema.html" formnovalidate/>
+	</form>

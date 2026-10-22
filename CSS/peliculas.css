@@ -1,0 +1,102 @@
+/* Configuración general */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1a59a8;
+    background-color: #ffffff;
+    margin: 20px;
+}
+
+/* Título principal */
+h2 {
+    color: #0d47a1;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Contenedor y Botón Crear */
+.btn-crear {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #0d47a1;
+    border: 2px solid #33b5e5;
+    border-radius: 12px;
+    padding: 6px 18px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-crear:hover {
+    background-color: #e0f7fa;
+}
+
+/* Tabla de Administración */
+table.tabla-admin {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 2px solid #33b5e5;
+    background-color: #ffffff;
+}
+
+table.tabla-admin th, 
+table.tabla-admin td {
+    border: 1px solid #33b5e5;
+    padding: 10px;
+    text-align: center;
+    color: #0d47a1;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+table.tabla-admin th {
+    font-weight: bold;
+    background-color: #ffffff;
+}
+
+/* Celdas de Acción (Borrar / Modificar) */
+td.celda-eliminar {
+    background-color: #ff5252; /* Fondo rojo */
+}
+
+td.celda-eliminar a {
+    color: #0d47a1 !important;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+td.celda-modificar {
+    background-color: #ffe054; /* Fondo amarillo */
+}
+
+td.celda-modificar a {
+    color: #0d47a1 !important;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Ajuste para la imagen del póster */
+.img-pelicula {
+    width: 100px;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Enlace Volver */
+.btn-volver {
+    display: inline-block;
+    margin-top: 20px;
+    color: #0d47a1;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.btn-volver:hover {
+    text-decoration: underline;
+}

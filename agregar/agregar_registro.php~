@@ -1,0 +1,49 @@
+<?php
+include "../conexion/conexion.php";
+include "../funciones/funciones.php";
+$conecta=conectar();
+
+$codigo_mascota=$_POST['codigo'];
+$dni_a=$_POST['dni_a']; echo $dni_a;
+
+$cont="select max(cod_reg) as cod_reg from registro_adopcion";
+$res=mysqli_query($conecta, $con);
+$filas=mysqli_num_rows($res);
+
+if($res and $filas>0){
+	$cod_registro_mayor=mysqli_fetch_array($res);
+	
+	$cod_reg_nuevo=$cod_registro_mayor['cod_reg'] + 10;
+	$fecha_a=$_POST['fecha_a'];
+	
+	
+	$consulta="insert into registro_adopcion(cod_reg, fecha_adopcion, dni_adoptante) values ($cod_reg_nuevo, '$fecha_a', $dni_a)";
+	$resultado=mysqli_query($conecta, $consulta);
+	
+	if($resultado){
+		$consulta1="update mascotas set codigo_reg=$cod_reg_nuevo where codigo=$codigo_mascota";
+		$res=mysqli_query($conecta, $consulta1);
+		
+		if($res){
+			$consulta2="select * from registro_adopcion inner join mascotas on registro_adopcion.cod_reg=mascotas.codigo_reg where registro_adopcion.cod_reg=$cod_reg_nuevo";
+			$res=mysqli_query($conecta, $consulta2);
+			if($res){
+			echo '<h2>DATOS AGREGADOS AL REGISTRO DE ADOPCION </h2>';
+			echo '<p>Codigo registro: '.$cod_reg_nuevo.' Fecha adopcion: '.$fecha_a.' Dni adoptable: '.$dni_a.'</p>';
+			echo '<h3>MASCOTA/S AGREGADAS A LA ADOPCION </h3>';
+			echo '<table border="1">';
+			while($tabla=mysqli_fetch_array($res)){
+				echo '<tr>';
+				echo '<td>Codigo: '.$tabla["codigo"].' Tipo: '.$tabla["tipo"].' Nombre: '.$tabla["nombre"].' Raza: '.$tabla["raza"].' Fecha ingreso: '.$tabla["fecha_ingreso"].' Codigo en el Registro:'.$tabla["cod_reg"].'</td>';
+				echo '</tr>';
+				}
+				echo '</table><br/><br/>';
+			echo '<a href="../sistema.html">Volver</a> ';
+			}
+		}
+		else echo 'Error no se agrego Registro'.$consulta. '<a href="../sistema.html">SALIR</a>';
+		}
+	}
+	?>
+		
+			

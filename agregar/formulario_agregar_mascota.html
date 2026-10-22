@@ -1,0 +1,28 @@
+<h2>NUEVA MASCOTA </h2>
+<form action="agregar_mascota.php" method="post">
+<label for="nombre">Nombre:</label>
+<input type="text" name="nombre" required/><br/><br/>
+<label for="tipo">Tipo Mascota:</label>
+<select id="tipo" name="tipo" required>
+	<option value="" selected disabled>-- Seleccione un Tipo --</option>
+	<option value="perro">Perro</option>
+	<option value="gato">Gato</option>
+	<option value="pajaros">Pajaro</option>
+	<option value="pez">Pez</option>
+	<option value="otros">Otros</option>
+	</select><br/><br/>
+	<label for="raza">Raza</label>
+	<input type="text" name="raza" required/><br/><br/>
+	<label for="edad">Edad</label>
+	<input type="number" name="edad" required/><br/><br/>
+	<label for="sexo">Sexo:</label>
+	<select id="sexo" name="sexo" required>
+		<option value="" selected disabled>-- Seleccione Sexo --</option>
+		<option value="macho">Macho </option>
+		<option value="hembra">Hembra</option>
+		</select><br/><br/>
+	<label for="fecha_ingreso">Fecha de Ingreso:</label>
+	<input type="date" name="fecha_ingreso" required/><br/><br/>
+	<input type="submit" name="agregar" value="AGREGAR MASCOTA"/>
+	<input type="submit" name="cancelar" value="cancelar" formaction="../sistema.html" formnovalidate/>
+	</form>
