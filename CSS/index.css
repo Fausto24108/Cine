@@ -1,203 +1,307 @@
-* {
-  box-sizing: border-box;
+:root{
+  --azul: #2563eb;
+  --azul-claro: #3b82f6;
+  --tinta: #10204a;
+  --fondo: #f3f5fa;
+  --borde: #dde3f0;
+  --texto-suave: #4a5578;
+}
+
+*{
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  box-sizing: border-box;
 }
 
-body {
-  display: flex;
-  min-height: 100vh;
-  background-color: #bdbab6;
+body{
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--tinta);
+  line-height: 1.5;
 }
 
-/* Contenido principal (Lado izquierdo) */
-.main-content {
-  flex: 1;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+a:focus-visible,
+button:focus-visible{
+  outline: 3px solid var(--azul-claro);
+  outline-offset: 3px;
 }
 
-/* Header y Logo */
-.header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 30px;
-  width: 100%;
-}
-
-.logo-circle {
-  width: 90px;
-  height: 90px;
-  background-color: #3b82f6;
-  border-radius: 50%;
+.header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.brand-title {
-  color: #3b82f6;
-  font-size: 32px;
-  letter-spacing: 2px;
-}
-
-/* Botón / Cartel central */
-.banner-btn {
-  background: linear-gradient(180deg, #5b8dfd 0%, #2b52bf 100%);
-  color: white;
-  padding: 15px 25px;
-  border-radius: 25px;
-  border: none;
-  font-size: 16px;
-  text-align: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  margin-bottom: 30px;
-  max-width: 400px;
-  width: 100%;
-}
-
-.gallery {
-  width: 100%;
-  display: flex;
-  flex-direction: row; /* Alinea los elementos uno al lado del otro */
-  gap: 15px;           /* Espacio entre las imágenes */
-  justify-content: center;
-}
-
-/* Define el tamaño de las imágenes */
-.gallery img {
-  width: 50%;          /* Usar un porcentaje más adecuado para 2 columnas */
-  height: 100%;       /* Usa una altura fija en px en lugar de % para evitar deformaciones */
-  object-fit: cover;
-}
-
-/* Barra lateral derecha */
-.sidebar {
-  width: 200px;
-  background-color: #3b82f6;
-  color: black;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
   justify-content: space-between;
-  border-left: 3px solid #000;
+  padding: 14px 48px;
+  background: white;
+  border-bottom: 1px solid var(--borde);
 }
 
-.menu-icon {
-  font-size: 28px;
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.logo{
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
+.brand-title{
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  color: var(--azul);
+}
+
+.nav-links{
+  display: flex;
+  gap: 6px;
+  list-style: none;
+}
+
+.nav-links a{
+  display: block;
+  padding: 9px 16px;
+  border-radius: 20px;
+  color: var(--tinta);
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-links a:hover{
+  background: var(--azul);
+  color: white;
+}
+
+.menu-icon{
+  display: none;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: var(--tinta);
   cursor: pointer;
+}
+
+.hero{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 64px 48px 72px;
+}
+
+.hero-text h1{
+  font-size: 44px;
+  line-height: 1.12;
+  letter-spacing: -1px;
   margin-bottom: 20px;
 }
 
-.nav-links {
-  list-style: none;
+.hero-text p{
+  max-width: 440px;
+  font-size: 18px;
+  color: var(--texto-suave);
+  margin-bottom: 32px;
+}
+
+.hero-botones{
   display: flex;
-  flex-direction: column;
-  gap: 25px;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
-.nav-links a {
-  color: #000;
+.btn{
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
   text-decoration: none;
-  font-size: 18px;
-  font-weight: 500;
+  transition: transform 0.2s, background 0.2s, color 0.2s;
 }
 
-.about-link {
-  text-align: center;
-  margin-top: auto;
-  padding-top: 40px;
+.btn:hover{
+  transform: translateY(-3px);
 }
 
-.about-link a {
-  color: #000;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 1.3;
+.btn-principal{
+  background: var(--azul);
+  color: white;
+}
+
+.btn-principal:hover{
+  background: var(--tinta);
+}
+
+.gallery{
+  position: relative;
+  height: 500px;
+}
+
+.gallery::before{
+  content: "";
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 72%;
+  height: 78%;
+  background: var(--azul-claro);
+  border-radius: 28px;
+}
+
+.foto{
+  position: absolute;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(16, 32, 74, 0.28);
+  transition: transform 0.4s;
+}
+
+.foto-grande{
+  top: 0;
+  left: 0;
+  width: 76%;
+  height: 400px;
+  transform: rotate(-2deg);
+}
+
+.foto-chica{
+  bottom: 0;
+  right: 0;
+  width: 56%;
+  height: 330px;
+  border: 8px solid white;
+  transform: rotate(3deg);
+}
+
+.foto:hover{
+  transform: rotate(0deg) scale(1.03);
+  z-index: 2;
+}
+
+.pasos{
+  background: var(--tinta);
+  color: white;
+  padding: 60px 48px;
+}
+
+.pasos-contenido{
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.pasos h2{
+  font-size: 30px;
+  margin-bottom: 36px;
+}
+
+.pasos-lista{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  list-style: none;
+}
+
+.paso-numero{
   display: block;
-}
-
-.logo {
-  width: 100px;   
-  height: auto; 
-  max-width: 100%;  
-  object-fit: contain;
-}
-
-.btn-login {
-  background-color: #008cba; /* Celeste / azul claro */
-  color: #ffffff;
-  padding: 10px 18px;
-  border-radius: 5px;
-  text-decoration: none;
+  font-size: 54px;
   font-weight: bold;
-  font-family: Arial, sans-serif;
-  display: inline-block;
-  transition: background-color 0.3s ease, transform 0.1s ease;
-  border: none;
+  line-height: 1;
+  color: var(--azul-claro);
+  margin-bottom: 12px;
 }
 
-/* Efecto al pasar el ratón */
-.btn-login:hover {
-  background-color: #005f7f; /* Celeste más oscuro al presionar */
-  color: #ffffff;
+.pasos-lista h3{
+  font-size: 20px;
+  margin-bottom: 6px;
 }
 
-/* Estilo alternativo si el usuario ya inició sesión (opcional) */
-.btn-logout {
-  background-color: #d9534f; /* Rojo sutil para cerrar sesión */
-  color: #ffffff;
+.pasos-lista p{
+  color: #c4cdea;
 }
 
-/* Barra principal celeste */
-.navbar-celeste {
-  background-color: #008cba; /* Fondo celeste */
-  padding: 12px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.footer{
+  padding: 24px;
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 14px;
 }
 
-/* Grupo de elementos del menú */
-.navbar-menu {
-  display: flex;
-  gap: 12px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  align-items: center;
+@media (max-width: 900px){
+  .header{
+    padding: 12px 20px;
+  }
+
+  .menu-icon{
+    display: block;
+  }
+
+  .nav{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-bottom: 1px solid var(--borde);
+    padding: 10px 20px 16px;
+  }
+
+  .nav.abierto{
+    display: block;
+  }
+
+  .nav-links{
+    flex-direction: column;
+  }
+
+  .hero{
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 40px 20px 56px;
+  }
+
+  .hero-text h1{
+    font-size: 36px;
+  }
+
+  .gallery{
+    height: 430px;
+  }
+
+  .foto-grande{
+    height: 330px;
+  }
+
+  .foto-chica{
+    height: 270px;
+  }
+
+  .pasos{
+    padding: 48px 20px;
+  }
+
+  .pasos-lista{
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-/* Las "cajitas blancas" para los enlaces y texto */
-.nav-box {
-  background-color: #ffffff; /* Fondo blanco */
-  color: #333333;
-  padding: 8px 16px;
-  border-radius: 8px; /* Bordes redondeados */
-  text-decoration: none;
-  font-weight: bold;
-  font-family: Arial, sans-serif;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  display: inline-block;
+@media (max-width: 520px){
+  .pasos-lista{
+    grid-template-columns: 1fr;
+  }
 }
 
-/* Efecto al pasar el ratón sobre cada cajita */
-.nav-box:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: #008cba;
-}
-
-/* Estilo especial opcional para destacar el botón de salida */
-.nav-box-logout:hover {
-  color: #d9534f;
+@media (prefers-reduced-motion: reduce){
+  *{
+    transition: none !important;
+  }
 }

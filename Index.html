@@ -4,44 +4,89 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CINEMAGIC</title>
-<link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
-  <!-- Contenido principal -->
-  <main class="main-content">
-    <header class="header">
-<img src="recursos/cropped_circle_image.png" alt="Logo" class="logo">
-      <h1 class="brand-title">CINEMAGIC</h1>
-    </header>
+  <header class="header">
+    <a href="#" class="brand">
+      <img src="recursos/cropped_circle_image.png" alt="Logo de Cinemagic" class="logo">
+      <span class="brand-title">CINEMAGIC</span>
+    </a>
 
-    <div class="banner-btn">
-      Disfruta de la mejor experiencia con la gente que mas queres
-    </div>
+    <button class="menu-icon" id="menuIcon" aria-label="Abrir menú">&#9776;</button>
 
-    <section class="gallery">
-      <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80" alt="Cine gente con anteojos 3D">
-      <img src="recursos/pochoclos.jpg" alt="Pochoclos">
-    </section>
-  </main>
-
-  <!-- Barra lateral -->
-  <aside class="sidebar">
-    <div>
-      <div class="menu-icon">&#9776;</div>
+    <nav class="nav" id="nav">
       <ul class="nav-links">
         <li><a href="#">Login</a></li>
-        <li><a href="#">Butacas</a></li>
         <li><a href="#">Productos</a></li>
-        <li><a href="cartelera/cartelera.php">Peliculas</a></li>
+        <li><a href="cartelera/cartelera.php">Películas</a></li>
         <li><a href="sistema.php">Sistema</a></li>
       </ul>
-    </div>
+    </nav>
+  </header>
 
-    <div class="about-link">
-      <a href="nosotros/contactenos.html">Acerca<br>de<br>nosotros</a>
-    </div>
-  </aside>
+  <main>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Disfrutá de la mejor experiencia con la gente que más querés</h1>
+        <p>Elegí tu película, reservá tus butacas y recibí el ticket en tu correo.</p>
+
+        <div class="hero-botones">
+          <a href="cartelera/cartelera.php" class="btn btn-principal">Ver cartelera</a>
+        </div>
+      </div>
+
+      <div class="gallery">
+        <img class="foto foto-grande" src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=800&q=80" alt="Personas en el cine con anteojos 3D">
+        <img class="foto foto-chica" src="recursos/pochoclos.jpg" alt="Pochoclos">
+      </div>
+    </section>
+
+    <section class="pasos">
+      <div class="pasos-contenido">
+        <h2>Comprá tu entrada en 4 pasos</h2>
+
+        <ol class="pasos-lista">
+          <li>
+            <span class="paso-numero">1</span>
+            <h3>Elegí tu película</h3>
+            <p>Mirá la cartelera y elegí la función que más te guste.</p>
+          </li>
+          <li>
+            <span class="paso-numero">2</span>
+            <h3>Elegí tus butacas</h3>
+            <p>Tocá en la sala los asientos que estén libres.</p>
+          </li>
+          <li>
+            <span class="paso-numero">3</span>
+            <h3>Pagá con tarjeta</h3>
+            <p>Podés pagar con Visa o Mastercard.</p>
+          </li>
+          <li>
+            <span class="paso-numero">4</span>
+            <h3>Recibí tu ticket</h3>
+            <p>Te llega a tu correo y lo guardás para siempre.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 CINEMAGIC</p>
+  </footer>
+
+  <script>
+    const menuIcon = document.getElementById("menuIcon");
+    const nav = document.getElementById("nav");
+
+    menuIcon.addEventListener("click", () => {
+      nav.classList.toggle("abierto");
+    });
+  </script>
 
 </body>
 </html>

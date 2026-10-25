@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-06-2026 a las 16:10:50
+-- Tiempo de generación: 25-10-2026 a las 21:56:42
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `cine`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `administradores`
+--
+
+CREATE TABLE `administradores` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `administradores`
+--
+
+INSERT INTO `administradores` (`id`, `usuario`, `password`) VALUES
+(1, 'admin', 'admin123'),
+(2, 'pepe', '$2y$10$7WVRcg7vQcsm4NwZVvDvPOM93MWfK/33CG.7H7h0hE0KHmmlL50T2'),
+(3, 'admin2', '$2y$10$e.1EToGkM.xR5Nvg8W2Ote4Cj/X4J9fM8bY2A9UqTj2B5N.e3eFie'),
+(4, 'pepito', '$2y$10$zAT3mGe4ztRXW3D9zTz90OVRL9tCEXU79U3xVU2u8BJtfASXhrrhC');
 
 -- --------------------------------------------------------
 
@@ -459,9 +481,15 @@ CREATE TABLE `funciones` (
 --
 
 INSERT INTO `funciones` (`id_funcion`, `id_pelicula`, `id_sala`, `horario`, `precio_entrada`) VALUES
-(1, 1, 2, '2026-04-28 18:00:00', 15000.00),
+(1, 1, 2, '2026-04-28 18:00:00', 10000.00),
 (2, 2, 1, '2026-04-27 20:30:00', 15000.00),
-(3, 3, 3, '2026-04-29 22:30:00', 20000.00);
+(3, 3, 3, '2026-04-29 22:30:00', 20000.00),
+(4, 1, 2, '2026-08-05 00:00:00', 13111.00),
+(7, 3, 2, '2026-07-02 00:00:00', 9000.00),
+(8, 1, 1, '2026-08-08 00:00:00', 22222.00),
+(9, 1, 1, '2026-08-10 00:00:00', 10000.00),
+(10, 1, 1, '2026-08-15 00:00:00', 8989.00),
+(12, 1, 2, '2026-10-01 00:00:00', 9999.00);
 
 -- --------------------------------------------------------
 
@@ -481,9 +509,9 @@ CREATE TABLE `peliculas` (
 --
 
 INSERT INTO `peliculas` (`id_pelicula`, `titulo`, `descripcion`, `imagen`) VALUES
-(1, 'Super Mario Galaxy: La Pelicula', 'Super Mario Galaxy: La Película (2026), producida por Nintendo e Illumination, es la secuela animada de \"Super Mario Bros.\" que lleva a Mario, Luigi y Peach al espacio junto a Rosalina y Yoshi para enfrentar a Bowser Jr. y una nueva amenaza cósmica.', '../recursos/mario.jpg'),
-(2, 'Michael', '\"Michael\" (2026) es la película biográfica oficial sobre Michael Jackson, dirigida por Antoine Fuqua y estrenada el 23 de abril de 2026. Protagonizada por Jaafar Jackson (sobrino del artista), la película narra desde sus inicios en Jackson 5 hasta convertirse en el \"Rey del Pop\". Promete una visión inmersiva con recreaciones de sus actuaciones icónicas. ', '../recursos/michael.jpg'),
-(3, 'Proyecto Fin del Mundo', 'Ryland Grace (Ryan Gosling) despierta en una nave espacial a años luz de casa, solo y sin recuerdos. Ahora, es el único sobreviviente en una misión desesperada para salvar al Sol y evitar la extinción de la humanidad. Con el tiempo agotándose, deberá usar su ingenio y ciencia para resolver un enigma cósmico antes de que la Tierra se congele para siempre. Una épica aventura de supervivencia basada en el éxito de ventas de Andy Weir.', '../recursos/proyecto.jpg');
+(1, 'Super Mario Galaxy: La Pelicula', 'Super Mario Galaxy: La Película (2026), producida por Nintendo e Illumination, es la secuela animada de', 'mario.jpeg'),
+(2, 'Michael', '	\"Michael\" (2026) es la película biográfica oficial sobre Michael Jackson, dirigida por Antoine Fuqua y estrenada el 23 de abril de 2026. Protagonizada por Jaafar Jackson (sobrino del artista), la película narra desde sus inicios en Jackson 5 hasta convertirse en el \"Rey del Pop\". Promete una visión inmersiva con recreaciones de sus actuaciones icónicas.', 'michael.png'),
+(3, 'Proyecto Fin del Mundo', 'Ryland Grace (Ryan Gosling) despierta en una nave espacial a años luz de casa, solo y sin recuerdos. Ahora, es el único sobreviviente en una misión desesperada para salvar al Sol y evitar la extinción de la humanidad. Con el tiempo agotándose, deberá usar su ingenio y ciencia para resolver un enigma cósmico antes de que la Tierra se congele para siempre. Una épica aventura de supervivencia basada en el éxito de ventas de Andy Weir.', 'findelmundo.jpg');
 
 -- --------------------------------------------------------
 
@@ -504,7 +532,7 @@ CREATE TABLE `salas` (
 
 INSERT INTO `salas` (`id_sala`, `nombre_sala`, `tipo`, `capacidad`) VALUES
 (1, 'Sala 01', '2D', 100),
-(2, 'Sala 02', '2D', 100),
+(2, 'Sala 02', '2D', 1001),
 (3, 'Sala 03', 'Monster', 200);
 
 -- --------------------------------------------------------
@@ -534,6 +562,13 @@ INSERT INTO `tickets` (`id_ticket`, `id_butaca`, `id_funcion`, `nombre_cliente`,
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `administradores`
+--
+ALTER TABLE `administradores`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `usuario` (`usuario`);
 
 --
 -- Indices de la tabla `butacas`
@@ -575,16 +610,22 @@ ALTER TABLE `tickets`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `administradores`
+--
+ALTER TABLE `administradores`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de la tabla `butacas`
 --
 ALTER TABLE `butacas`
-  MODIFY `id_butaca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=401;
+  MODIFY `id_butaca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=415;
 
 --
 -- AUTO_INCREMENT de la tabla `funciones`
 --
 ALTER TABLE `funciones`
-  MODIFY `id_funcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_funcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `peliculas`
