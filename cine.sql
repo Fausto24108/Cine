@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
-<<<<<<< HEAD
--- Tiempo de generación: 02-05-2026 a las 03:00:11
-=======
 -- Tiempo de generación: 16-06-2026 a las 16:10:50
->>>>>>> 98a9da982b75173ffd072aaef36f5b1b007063f0
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -485,15 +481,9 @@ CREATE TABLE `peliculas` (
 --
 
 INSERT INTO `peliculas` (`id_pelicula`, `titulo`, `descripcion`, `imagen`) VALUES
-<<<<<<< HEAD
-(1, 'Super Mario Galaxy: La Pelicula', 'Super Mario Galaxy: La Película (2026), producida por Nintendo e Illumination, es la secuela animada de \"Super Mario Bros.\" que lleva a Mario, Luigi y Peach al espacio junto a Rosalina y Yoshi para enfrentar a Bowser Jr. y una nueva amenaza cósmica.', 'mario.jpg'),
-(2, 'Michael', '\"Michael\" (2026) es la película biográfica oficial sobre Michael Jackson, dirigida por Antoine Fuqua y estrenada el 23 de abril de 2026. Protagonizada por Jaafar Jackson (sobrino del artista), la película narra desde sus inicios en Jackson 5 hasta convertirse en el \"Rey del Pop\". Promete una visión inmersiva con recreaciones de sus actuaciones icónicas. ', 'michael.jpg'),
-(3, 'Proyecto Fin del Mundo', 'Ryland Grace (Ryan Gosling) despierta en una nave espacial a años luz de casa, solo y sin recuerdos. Ahora, es el único sobreviviente en una misión desesperada para salvar al Sol y evitar la extinción de la humanidad. Con el tiempo agotándose, deberá usar su ingenio y ciencia para resolver un enigma cósmico antes de que la Tierra se congele para siempre. Una épica aventura de supervivencia basada en el éxito de ventas de Andy Weir.', 'proyecto.jpg');
-=======
 (1, 'Super Mario Galaxy: La Pelicula', 'Super Mario Galaxy: La Película (2026), producida por Nintendo e Illumination, es la secuela animada de \"Super Mario Bros.\" que lleva a Mario, Luigi y Peach al espacio junto a Rosalina y Yoshi para enfrentar a Bowser Jr. y una nueva amenaza cósmica.', '../recursos/mario.jpg'),
 (2, 'Michael', '\"Michael\" (2026) es la película biográfica oficial sobre Michael Jackson, dirigida por Antoine Fuqua y estrenada el 23 de abril de 2026. Protagonizada por Jaafar Jackson (sobrino del artista), la película narra desde sus inicios en Jackson 5 hasta convertirse en el \"Rey del Pop\". Promete una visión inmersiva con recreaciones de sus actuaciones icónicas. ', '../recursos/michael.jpg'),
 (3, 'Proyecto Fin del Mundo', 'Ryland Grace (Ryan Gosling) despierta en una nave espacial a años luz de casa, solo y sin recuerdos. Ahora, es el único sobreviviente en una misión desesperada para salvar al Sol y evitar la extinción de la humanidad. Con el tiempo agotándose, deberá usar su ingenio y ciencia para resolver un enigma cósmico antes de que la Tierra se congele para siempre. Una épica aventura de supervivencia basada en el éxito de ventas de Andy Weir.', '../recursos/proyecto.jpg');
->>>>>>> 98a9da982b75173ffd072aaef36f5b1b007063f0
 
 -- --------------------------------------------------------
 
