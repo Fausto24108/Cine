@@ -37,6 +37,8 @@ $resFunciones = mysqli_query($con, $sqlFunciones);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $pelicula['titulo']; ?> - Cinemagic</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="./recursos/LogoCine.jpg" type="image/jpg">
+
     <style>
         .detalle-container {
             display: flex;

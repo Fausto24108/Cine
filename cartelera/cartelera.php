@@ -17,6 +17,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <meta charset="UTF-8">
     <title>Cine Magic</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../recursos/LogoCine.jpg" type="image/jpg">
 </head>
 <body>
 
