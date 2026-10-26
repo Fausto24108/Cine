@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-10-2026 a las 21:56:42
+-- Tiempo de generación: 25-10-2026 a las 23:09:31
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -532,7 +532,7 @@ CREATE TABLE `salas` (
 
 INSERT INTO `salas` (`id_sala`, `nombre_sala`, `tipo`, `capacidad`) VALUES
 (1, 'Sala 01', '2D', 100),
-(2, 'Sala 02', '2D', 1001),
+(2, 'Sala 02', '2D', 100),
 (3, 'Sala 03', 'Monster', 200);
 
 -- --------------------------------------------------------
